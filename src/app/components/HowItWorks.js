@@ -60,7 +60,7 @@ export default function HowItWorks() {
   return (
     <section
       ref={sectionRef}
-      className="relative px-6 lg:px-10 py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-[#001028] via-[#000718] to-[#000514]"
+      className="relative px-6 lg:px-10 py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-[#000514] to-[#001028]"
     >
       {/* Grid overlay */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>

@@ -26,10 +26,7 @@ const Navbar = () => {
         {/* ✅ Logo with Next.js Link */}
         <Link href="/" className="flex items-center">
           {/* If you want to use the image logo */}
-          {/* <Image src={Logo} alt="Healthcare Logo" width={120} height={50} /> */}
-          <h1 className="text-[1rem] leading-[50px] font-bold bg-gradient-to-b from-white to-[#737373] bg-clip-text text-transparent text-center">
-            HEALTHCARE
-          </h1>
+          <Image src={Logo} alt="Healthcare Logo" width={120} height={50} />
         </Link>
 
         {/* ✅ Button inside Link */}

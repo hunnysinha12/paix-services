@@ -149,7 +149,7 @@ export default function DoctorCards() {
   const otherDoctors = doctors.slice(1);
 
   return (
-    <div className="bg-gradient-to-b from-[#000514] to-[#001028]  p-8">
+    <div className="bg-gradient-to-b from-[#001028] to-[#000514]  p-8">
       <div className="text-center">
         <p className="text-orange-500 italic mb-3 animate-fade-in">
           How It Works

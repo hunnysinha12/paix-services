@@ -76,7 +76,7 @@ export default function AppointmentBooking() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#001028] to-[#000514]  py-16 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#000514] to-[#001028]  py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
@@ -100,7 +100,7 @@ export default function AppointmentBooking() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Info Cards */}
           <div className="space-y-6">
-            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+            <div className="bg-[#001028] rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
                   <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center">
@@ -108,7 +108,7 @@ export default function AppointmentBooking() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-2xl font-bold text-white mb-2">
                     Working Hours
                   </h3>
                   <p className="text-gray-600 mb-3">
@@ -117,13 +117,13 @@ export default function AppointmentBooking() {
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-gray-600">Monday - Friday:</span>
-                      <span className="font-semibold text-gray-900">
+                      <span className="font-semibold text-white">
                         9:00 AM - 6:00 PM
                       </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Saturday:</span>
-                      <span className="font-semibold text-gray-900">
+                      <span className="font-semibold text-white">
                         9:00 AM - 2:00 PM
                       </span>
                     </div>
@@ -167,8 +167,8 @@ export default function AppointmentBooking() {
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <div className="bg-[#000514] rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <h3 className="text-2xl font-bold text-white mb-4">
                 Contact Information
               </h3>
               <div className="space-y-4">
@@ -185,7 +185,7 @@ export default function AppointmentBooking() {
           </div>
 
           {/* Right Side - Booking Form */}
-          <div className="bg-white rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+          <div className="bg-gradient-to-b from-[#001028] to-[#000514] rounded-3xl p-8 shadow-2xl relative overflow-hidden">
             {/* Success Message Overlay */}
             {isSubmitted && (
               <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-600 z-50 flex items-center justify-center transition-all duration-500">
@@ -201,7 +201,7 @@ export default function AppointmentBooking() {
               </div>
             )}
 
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-white mb-6">
               Schedule Your Visit
             </h2>
 
