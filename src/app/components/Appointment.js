@@ -98,7 +98,7 @@ export default function AppointmentBooking() {
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Schedule a consultation with our expert healthcare professionals.
-            We're here to help you every step of the way.
+            We&apos;re here to help you every step of the way.
           </p>
         </div>
 
@@ -118,7 +118,7 @@ export default function AppointmentBooking() {
                     Working Hours
                   </h3>
                   <p className="text-gray-400 mb-4">
-                    We're available throughout the week
+                    We&apos;re available throughout the week
                   </p>
                   <div className="space-y-3 text-sm">
                     <div className="flex justify-between items-center p-2 rounded-lg bg-white/5">
@@ -212,7 +212,7 @@ export default function AppointmentBooking() {
                     Appointment Booked!
                   </h3>
                   <p className="text-green-100">
-                    We'll contact you shortly to confirm.
+                    We&apos;ll contact you shortly to confirm.
                   </p>
                 </div>
               </div>

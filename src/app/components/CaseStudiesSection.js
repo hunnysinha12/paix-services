@@ -104,7 +104,7 @@ export default function CaseStudiesSection() {
             </span>
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            See how we've transformed revenue cycle operations for leading
+            See how we&apos;ve transformed revenue cycle operations for leading
             healthcare organizations
           </p>
         </div>
@@ -337,7 +337,7 @@ export default function CaseStudiesSection() {
               <div className="mt-10 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/30 rounded-xl p-8 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/20 animate-fadeIn">
                 <div className="flex items-start gap-4">
                   <div className="text-blue-400 text-6xl leading-none animate-pulse">
-                    "
+                    &apos;
                   </div>
                   <div>
                     <p className="text-white text-lg mb-4 italic">
