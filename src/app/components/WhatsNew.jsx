@@ -16,6 +16,7 @@ import { newFeatures } from "../../../constants";
 
 const WhatsNew = () => (
   <section
+    id="About"
     className={`${styles.paddings} relative z-10 bg-gradient-to-b from-[#001028] to-[#000514]`}
   >
     <motion.div
@@ -30,14 +31,14 @@ const WhatsNew = () => (
         className="flex-[0.95] flex justify-center flex-col"
       >
         <TypingText title="| Whats new?" />
-        <TitleText title={<>What's new about MetaDroid?</>} />
+        <TitleText title={<>A Healthier Future Starts Here</>} />
         <div className="mt-[48px] flex flex-wrap justify-between gap-[24px]">
           {newFeatures.map((feature) => (
             <NewFeatures key={feature.title} {...feature} />
           ))}
         </div>
       </motion.div>
-
+      {/* 
       <motion.div
         variants={planetVariants("right")}
         className={`flex-1 ${styles.flexCenter}`}
@@ -47,7 +48,7 @@ const WhatsNew = () => (
           alt="get-started"
           className="w-[90%] h-[90%] object-contain"
         />
-      </motion.div>
+      </motion.div> */}
     </motion.div>
   </section>
 );

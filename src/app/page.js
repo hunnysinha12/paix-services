@@ -1,12 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "../../styles";
 import { slideIn, staggerContainer, textVariant } from "../../utils/motion";
-
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import AboutSection from "./components/AboutSection";
 import DepartmentsSlider from "./components/DepartmentsSlider";
 import HowItWorks from "./components/HowItWorks";
@@ -16,9 +17,11 @@ import Explore from "./components/Explore";
 import WhatsNew from "./components/WhatsNew";
 import GetStarted from "./components/GetStarted";
 import Hero from "./components/Hero";
+import FeaturesDemo from "./components/Cards";
 
 // ✅ Component name must be PascalCase
 const Page = () => {
+  let [showContent, setShowContent] = useState(false);
   const [isDesktop, setIsDesktop] = React.useState(true);
   const [navBg, setNavBg] = React.useState(false);
 
@@ -45,6 +48,7 @@ const Page = () => {
   }, []);
 
   // ✅ Services data
+
   const services = [
     {
       id: 0,
@@ -69,21 +73,79 @@ const Page = () => {
     },
   ];
 
-  return (
-    <div className="overflow-hidden">
-      {/* ✅ Hero Section */}
-      <Hero />
-      {/* ✅ Services Section */}
+  useGSAP(() => {
+    const tl = gsap.timeline();
 
-      {/* ✅ Other Components */}
-      <WhatsNew />
-      <GetStarted />
-      {/* <AboutSection /> */}
-      {/* <DepartmentsSlider /> */}
-      <Explore />
-      <HowItWorks />
-      <Staff />
-      <AppointmentBooking id="appointmentbooking" />
+    tl.to(".vi-mask-group", {
+      rotate: 10,
+      duration: 2,
+      ease: "Power4.easeInOut",
+      transformOrigin: "50% 50%",
+    }).to(".vi-mask-group", {
+      scale: 10,
+      duration: 2,
+      delay: -1.8,
+      ease: "Expo.easeInOut",
+      transformOrigin: "50% 50%",
+      opacity: 0,
+      onUpdate: function () {
+        if (this.progress() >= 0.9) {
+          document.querySelector(".svg").remove();
+          setShowContent(true);
+          this.kill();
+        }
+      },
+    });
+  });
+
+  return (
+    <div className="overflow-hidden ">
+      <div className="svg flex items-center justify-center fixed top-0 left-0 z-[100] w-full h-screen overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] bg-[#000] ">
+        <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <mask id="viMask">
+              <rect width="100%" height="100%" fill="black" />
+              <g className="vi-mask-group">
+                <text
+                  x="50%"
+                  y="50%"
+                  fontSize="250"
+                  textAnchor="middle"
+                  fill="white"
+                  dominantBaseline="middle"
+                  fontFamily="Arial Black"
+                >
+                  PS
+                </text>
+              </g>
+            </mask>
+          </defs>
+          <image
+            href="./bg.png"
+            width="100%"
+            height="100%"
+            preserveAspectRatio="xMidYMid slice"
+            mask="url(#viMask)"
+          />
+        </svg>
+      </div>
+      {showContent && (
+        <>
+          {/* ✅ Hero Section */}
+          <Hero />
+          {/* ✅ Services Section */}
+
+          {/* ✅ Other Components */}
+          <FeaturesDemo />
+          <GetStarted />
+          {/* <AboutSection /> */}
+          {/* <DepartmentsSlider /> */}
+          <Explore />
+          <HowItWorks />
+          <Staff />
+          <AppointmentBooking id="appointmentbooking" />
+        </>
+      )}
     </div>
   );
 };
