@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Calendar,
   Clock,
@@ -78,22 +78,25 @@ export default function AppointmentBooking() {
   };
 
   return (
-    <div className="min-h-screen py-16 px-4 bg-gradient-to-b from-[#000514] to-[#001028] ">
+    <div
+      id="contact"
+      className="min-h-screen py-16 px-4 bg-gradient-to-b from-[#000514] to-[#001028]"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <div className="flex items-center justify-center w-16 h-16 bg-transparent rounded-2xl mx-auto border-4 border-gradient-to-r from-blue-400 via-purple-500 to-pink-500 shadow-lg animate-gradient">
-              <Calendar className="text-white" size={32} />
+        <div className="text-center mb-16 animate-in fade-in slide-in-from-top duration-700">
+          <div className="inline-block mb-6">
+            <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl mx-auto shadow-2xl shadow-blue-500/50 hover:scale-110 transition-transform duration-300">
+              <Calendar className="text-white" size={40} />
             </div>
           </div>
-          <h1 className="text-5xl font-bold bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent mb-4">
+          <h1 className="text-5xl sm:text-6xl font-bold text-white mb-4">
             Book Your{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
               Appointment
             </span>
           </h1>
-          <p className="text-xl text-white max-w-2xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Schedule a consultation with our expert healthcare professionals.
             We're here to help you every step of the way.
           </p>
@@ -101,38 +104,38 @@ export default function AppointmentBooking() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Info Cards */}
-          <div className="space-y-6">
+          <div className="space-y-6 animate-in fade-in slide-in-from-left duration-700 delay-150">
             {/* Working Hours Card */}
-            <div className="bg-transparent rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-4 border-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient">
+            <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/10 hover:border-blue-500/50 hover:bg-white/10">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
-                  <div className="w-14 h-14 bg-transparent rounded-2xl flex items-center justify-center border-2 border-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient">
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
                     <Clock className="text-white" size={24} />
                   </div>
                 </div>
-                <div>
+                <div className="flex-1">
                   <h3 className="text-2xl font-bold text-white mb-2">
                     Working Hours
                   </h3>
-                  <p className="text-gray-400 mb-3">
+                  <p className="text-gray-400 mb-4">
                     We're available throughout the week
                   </p>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
+                  <div className="space-y-3 text-sm">
+                    <div className="flex justify-between items-center p-2 rounded-lg bg-white/5">
                       <span className="text-gray-400">Monday - Friday:</span>
                       <span className="font-semibold text-white">
                         9:00 AM - 6:00 PM
                       </span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between items-center p-2 rounded-lg bg-white/5">
                       <span className="text-gray-400">Saturday:</span>
                       <span className="font-semibold text-white">
                         9:00 AM - 2:00 PM
                       </span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between items-center p-2 rounded-lg bg-white/5">
                       <span className="text-gray-400">Sunday:</span>
-                      <span className="font-semibold text-red-500">Closed</span>
+                      <span className="font-semibold text-red-400">Closed</span>
                     </div>
                   </div>
                 </div>
@@ -140,30 +143,32 @@ export default function AppointmentBooking() {
             </div>
 
             {/* Expert Care Card */}
-            <div className="bg-transparent rounded-3xl p-8 shadow-xl text-white border-4 border-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient">
+            <div className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-blue-500/30 hover:shadow-2xl transition-all duration-300 hover:border-blue-500/50">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
-                  <div className="w-14 h-14 bg-transparent backdrop-blur-sm rounded-2xl flex items-center justify-center border-2 border-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient">
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
                     <Stethoscope className="text-white" size={24} />
                   </div>
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Expert Care</h3>
-                  <p className="text-blue-100 mb-4">
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    Expert Care
+                  </h3>
+                  <p className="text-blue-200 mb-4">
                     Our team of specialists is dedicated to providing you with
                     the highest quality healthcare.
                   </p>
-                  <ul className="space-y-2 text-sm">
+                  <ul className="space-y-2 text-sm text-gray-300">
                     <li className="flex items-center">
-                      <CheckCircle size={16} className="mr-2" />
+                      <CheckCircle size={18} className="mr-2 text-green-400" />
                       Board-certified physicians
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle size={16} className="mr-2" />
+                      <CheckCircle size={18} className="mr-2 text-green-400" />
                       State-of-the-art facilities
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle size={16} className="mr-2" />
+                      <CheckCircle size={18} className="mr-2 text-green-400" />
                       Personalized treatment plans
                     </li>
                   </ul>
@@ -172,30 +177,37 @@ export default function AppointmentBooking() {
             </div>
 
             {/* Contact Info Card */}
-            <div className="bg-transparent rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-4 border-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient">
-              <h3 className="text-2xl font-bold text-white mb-4">
+            <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/10 hover:border-purple-500/50 hover:bg-white/10">
+              <h3 className="text-2xl font-bold text-white mb-6">
                 Contact Information
               </h3>
               <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Phone className="text-blue-600" size={20} />
-                  <span className="text-gray-400">+1 (555) 123-4567</span>
+                <div className="flex items-center space-x-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-200">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                    <Phone className="text-white" size={18} />
+                  </div>
+                  <span className="text-gray-300">+1 (555) 123-4567</span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="text-blue-600" size={20} />
-                  <span className="text-gray-400">contact@healthcare.com</span>
+                <div className="flex items-center space-x-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-200">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                    <Mail className="text-white" size={18} />
+                  </div>
+                  <span className="text-gray-300">contact@healthcare.com</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Right Side - Booking Form */}
-          <div className="bg-transparent rounded-3xl p-8 shadow-2xl relative overflow-hidden border-4 border-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient">
+          <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-2xl relative overflow-hidden border border-white/10 animate-in fade-in slide-in-from-right duration-700 delay-300">
             {/* Success Message Overlay */}
             {isSubmitted && (
-              <div className="absolute inset-0 bg-green-500/80 z-50 flex items-center justify-center transition-all duration-500">
-                <div className="text-center text-white">
-                  <CheckCircle size={64} className="mx-auto mb-4" />
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-600 z-50 flex items-center justify-center transition-all duration-500 rounded-3xl">
+                <div className="text-center text-white animate-in zoom-in duration-500">
+                  <CheckCircle
+                    size={64}
+                    className="mx-auto mb-4 animate-pulse"
+                  />
                   <h3 className="text-3xl font-bold mb-2">
                     Appointment Booked!
                   </h3>
@@ -210,15 +222,15 @@ export default function AppointmentBooking() {
               Schedule Your Visit
             </h2>
 
-            <form className="space-y-5">
+            <div className="space-y-5">
               {/* Name Input */}
               <div className="group">
-                <label className="block text-sm font-semibold text-gray-400 mb-2">
-                  Full Name
+                <label className="block text-sm font-semibold text-gray-300 mb-2">
+                  Full Name *
                 </label>
                 <div className="relative">
                   <User
-                    className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 transition-colors"
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 group-focus-within:text-blue-400 transition-colors"
                     size={20}
                   />
                   <input
@@ -226,7 +238,7 @@ export default function AppointmentBooking() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full text-white pl-12 pr-4 py-3 border-2 rounded-xl border-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient bg-transparent focus:outline-none focus:ring-4 focus:ring-blue-100"
+                    className="w-full text-white pl-12 pr-4 py-3 border-2 border-white/10 rounded-xl bg-white/5 focus:outline-none focus:border-blue-500 focus:bg-white/10 transition-all duration-200"
                     placeholder="John Doe"
                   />
                 </div>
@@ -234,79 +246,101 @@ export default function AppointmentBooking() {
 
               {/* Email and Phone */}
               <div className="grid md:grid-cols-2 gap-4">
-                {["email", "phone"].map((field) => (
-                  <div key={field} className="group">
-                    <label className="block text-sm font-semibold text-gray-400 mb-2 capitalize">
-                      {field}
-                    </label>
-                    <div className="relative">
-                      {field === "email" ? (
-                        <Mail
-                          className="absolute text-white left-4 top-1/2 transform -translate-y-1/2 "
-                          size={20}
-                        />
-                      ) : (
-                        <Phone
-                          className="absolute text-white left-4 top-1/2 transform -translate-y-1/2 "
-                          size={20}
-                        />
-                      )}
-                      <input
-                        type={field === "email" ? "email" : "tel"}
-                        name={field}
-                        value={formData[field]}
-                        onChange={handleChange}
-                        className="w-full text-white pl-12 pr-4 py-3 border-2 rounded-xl border-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient bg-transparent focus:outline-none focus:ring-4 focus:ring-blue-100"
-                        placeholder={
-                          field === "email"
-                            ? "john@example.com"
-                            : "+1 (555) 000-0000"
-                        }
-                      />
-                    </div>
+                <div className="group">
+                  <label className="block text-sm font-semibold text-gray-300 mb-2">
+                    Email *
+                  </label>
+                  <div className="relative">
+                    <Mail
+                      className="absolute text-gray-400 left-4 top-1/2 transform -translate-y-1/2 group-focus-within:text-blue-400 transition-colors"
+                      size={20}
+                    />
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full text-white pl-12 pr-4 py-3 border-2 border-white/10 rounded-xl bg-white/5 focus:outline-none focus:border-blue-500 focus:bg-white/10 transition-all duration-200"
+                      placeholder="john@example.com"
+                    />
                   </div>
-                ))}
+                </div>
+
+                <div className="group">
+                  <label className="block text-sm font-semibold text-gray-300 mb-2">
+                    Phone *
+                  </label>
+                  <div className="relative">
+                    <Phone
+                      className="absolute text-gray-400 left-4 top-1/2 transform -translate-y-1/2 group-focus-within:text-blue-400 transition-colors"
+                      size={20}
+                    />
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full text-white pl-12 pr-4 py-3 border-2 border-white/10 rounded-xl bg-white/5 focus:outline-none focus:border-blue-500 focus:bg-white/10 transition-all duration-200"
+                      placeholder="+1 (555) 000-0000"
+                    />
+                  </div>
+                </div>
               </div>
 
               {/* Department and Doctor */}
               <div className="grid md:grid-cols-2 gap-4">
-                {["department", "doctor"].map((field) => (
-                  <div key={field}>
-                    <label className="block text-sm font-semibold text-gray-400 mb-2 capitalize">
-                      {field === "doctor" ? "Preferred Doctor" : "Department"}
-                    </label>
-                    <select
-                      name={field}
-                      value={formData[field]}
-                      onChange={handleChange}
-                      className="w-full text-white px-4 py-3 border-2 rounded-xl border-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient bg-transparent cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-100"
-                    >
-                      <option value="">
-                        {field === "doctor"
-                          ? "Select Doctor"
-                          : "Select Department"}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-300 mb-2">
+                    Department *
+                  </label>
+                  <select
+                    name="department"
+                    value={formData.department}
+                    onChange={handleChange}
+                    className="w-full text-white px-4 py-3 border-2 border-white/10 rounded-xl bg-white/5 cursor-pointer focus:outline-none focus:border-blue-500 focus:bg-white/10 transition-all duration-200"
+                  >
+                    <option value="" className="bg-gray-800">
+                      Select Department
+                    </option>
+                    {departments.map((item) => (
+                      <option key={item} value={item} className="bg-gray-800">
+                        {item}
                       </option>
-                      {(field === "doctor" ? doctors : departments).map(
-                        (item) => (
-                          <option key={item} value={item}>
-                            {item}
-                          </option>
-                        )
-                      )}
-                    </select>
-                  </div>
-                ))}
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-300 mb-2">
+                    Preferred Doctor
+                  </label>
+                  <select
+                    name="doctor"
+                    value={formData.doctor}
+                    onChange={handleChange}
+                    className="w-full text-white px-4 py-3 border-2 border-white/10 rounded-xl bg-white/5 cursor-pointer focus:outline-none focus:border-blue-500 focus:bg-white/10 transition-all duration-200"
+                  >
+                    <option value="" className="bg-gray-800">
+                      Select Doctor
+                    </option>
+                    {doctors.map((item) => (
+                      <option key={item} value={item} className="bg-gray-800">
+                        {item}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
 
               {/* Date and Time */}
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="group">
-                  <label className="block text-sm font-semibold text-white mb-2">
-                    Preferred Date
+                  <label className="block text-sm font-semibold text-gray-300 mb-2">
+                    Preferred Date *
                   </label>
                   <div className="relative">
                     <Calendar
-                      className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white"
+                      className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 group-focus-within:text-blue-400 transition-colors pointer-events-none"
                       size={20}
                     />
                     <input
@@ -315,29 +349,31 @@ export default function AppointmentBooking() {
                       value={formData.date}
                       onChange={handleChange}
                       min={new Date().toISOString().split("T")[0]}
-                      className="w-full text-white pl-12 pr-4 py-3 border-2 rounded-xl border-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient bg-transparent cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-100"
+                      className="w-full text-white pl-12 pr-4 py-3 border-2 border-white/10 rounded-xl bg-white/5 cursor-pointer focus:outline-none focus:border-blue-500 focus:bg-white/10 transition-all duration-200"
                     />
                   </div>
                 </div>
 
                 <div className="group">
-                  <label className="block text-sm font-semibold text-white mb-2">
-                    Preferred Time
+                  <label className="block text-sm font-semibold text-gray-300 mb-2">
+                    Preferred Time *
                   </label>
                   <div className="relative">
                     <Clock
-                      className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white"
+                      className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"
                       size={20}
                     />
                     <select
                       name="time"
                       value={formData.time}
                       onChange={handleChange}
-                      className="w-full text-white pl-12 pr-4 py-3 border-2 rounded-xl border-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient bg-transparent cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-100"
+                      className="w-full text-white pl-12 pr-4 py-3 border-2 border-white/10 rounded-xl bg-white/5 cursor-pointer focus:outline-none focus:border-blue-500 focus:bg-white/10 transition-all duration-200"
                     >
-                      <option value="">Select Time</option>
+                      <option value="" className="bg-gray-800">
+                        Select Time
+                      </option>
                       {timeSlots.map((slot) => (
-                        <option key={slot} value={slot}>
+                        <option key={slot} value={slot} className="bg-gray-800">
                           {slot}
                         </option>
                       ))}
@@ -348,7 +384,7 @@ export default function AppointmentBooking() {
 
               {/* Message */}
               <div>
-                <label className="block text-sm font-semibold text-gray-400 mb-2">
+                <label className="block text-sm font-semibold text-gray-300 mb-2">
                   Additional Message (Optional)
                 </label>
                 <textarea
@@ -356,7 +392,7 @@ export default function AppointmentBooking() {
                   value={formData.message}
                   onChange={handleChange}
                   rows="4"
-                  className="w-full text-white px-4 py-3 border-2 rounded-xl border-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient bg-transparent focus:outline-none focus:ring-4 focus:ring-blue-100 resize-none"
+                  className="w-full text-white px-4 py-3 border-2 border-white/10 rounded-xl bg-white/5 focus:outline-none focus:border-blue-500 focus:bg-white/10 transition-all duration-200 resize-none"
                   placeholder="Tell us more about your condition or any specific concerns..."
                 />
               </div>
@@ -365,11 +401,11 @@ export default function AppointmentBooking() {
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-4 rounded-xl hover:from-blue-700 hover:to-purple-700 transform hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg hover:shadow-xl"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-4 rounded-xl hover:from-blue-700 hover:to-purple-700 transform hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-blue-500/50 hover:shadow-xl hover:shadow-blue-500/60"
               >
                 Book Appointment
               </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>

@@ -149,19 +149,22 @@ export default function DoctorCards() {
   const otherDoctors = doctors.slice(1);
 
   return (
-    <div className="bg-gradient-to-b from-[#001028] to-[#000514]  p-8">
-      <div className="text-center">
-        <p className="text-orange-500 italic mb-3 animate-fade-in">
-          How It Works
-        </p>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-in-up bg-gradient-to-b from-white to-[#737373] bg-clip-text text-transparent">
-          HOW IT HELPS YOU TO KEEP HEALTHY
-        </h2>
-        <p className="text-white max-w-2xl mx-auto mb-14 animate-fade-in-up delay-200">
-          Medical care is the practice of providing diagnosis, treatment, and
-          preventive care for various illnesses, injuries, and diseases.
-        </p>
-      </div>
+    <div
+      id="team"
+      className="bg-gradient-to-b from-[#001028] to-[#000514]  p-8"
+    >
+      {/* Header */}
+
+      <h1 className="text-5xl flex flex-wrap gap-1 justify-center items-center md:text-6xl font-bold text-white mb-6 leading-tight">
+        Expert Care,
+        <span className=" bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 text-transparent bg-clip-text">
+          Delivered by Experts
+        </span>
+      </h1>
+      <p className="text-gray-400 text-lg max-w-2xl text-center mx-auto">
+        Our multidisciplinary team combines knowledge, experience, and empathy
+        to ensure the best outcomes for every patient.
+      </p>
 
       <div className="min-h-screen flex items-center justify-center">
         {/* Main Large Card */}
@@ -174,7 +177,7 @@ export default function DoctorCards() {
         />
 
         {/* Smaller Cards Grid */}
-        <div className="ml-8 grid grid-cols-2 gap-6">
+        <div className="ml-8 grid lg:grid-cols-2 md:grid-cols-1 gap-6">
           {otherDoctors.map((doctor) => (
             <DoctorCard
               key={doctor.id}

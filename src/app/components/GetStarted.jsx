@@ -21,7 +21,7 @@ function classNames(...classes) {
 
 const tabs = [
   {
-    name: "Services Front-End Services",
+    name: "Front-End Services",
     content: (
       <section className={`relative z-10`}>
         <motion.div
@@ -141,24 +141,46 @@ const tabs = [
 
 export default function ServicesTabs() {
   return (
-    <section className="bg-gradient-to-b from-[#000514] to-[#001028] py-16">
+    <section
+      id="services"
+      className="bg-gradient-to-b from-[#000514] to-[#001028] py-16"
+    >
+      <div className="flex justify-center items-center py-12">
+        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight gap-1 flex flex-wrap justify-center">
+          Your Health,
+          <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 text-transparent bg-clip-text">
+            Our Priority
+          </span>
+        </h1>
+      </div>
       <div className="max-w-7xl mx-auto px-4">
         {/* Tab Navigation */}
         <Tab.Group>
-          <Tab.List className="flex space-x-4 rounded-xl bg-[#00091f] p-2 mb-10">
+          <Tab.List className="flex flex-wrap gap-3 justify-center mb-12">
             {tabs.map((tab) => (
               <Tab
                 key={tab.name}
                 className={({ selected }) =>
                   classNames(
-                    "w-full rounded-lg py-3 text-sm font-medium leading-5 text-white",
+                    "relative px-6 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 focus:outline-none",
                     selected
-                      ? "bg-gradient-to-r from-blue-600 to-indigo-600 shadow"
-                      : "hover:bg-[#001531] transition-colors duration-200"
+                      ? "text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg shadow-blue-500/50 scale-105"
+                      : "text-gray-300 bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-white/20 hover:text-white"
                   )
                 }
               >
-                {tab.name}
+                {({ selected }) => (
+                  <>
+                    {tab.name}
+                    {selected && (
+                      <motion.div
+                        layoutId="activeTab"
+                        className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full -z-10"
+                        transition={{ type: "spring", duration: 0.6 }}
+                      />
+                    )}
+                  </>
+                )}
               </Tab>
             ))}
           </Tab.List>
