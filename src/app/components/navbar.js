@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [navIsOpened, setNavIsOpened] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const closeNavbar = () => {
     setNavIsOpened(false);
@@ -12,6 +14,33 @@ const Navbar = () => {
   const toggleNavbar = () => {
     setNavIsOpened((prev) => !prev);
   };
+
+  // Handle scroll behavior
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < 10) {
+        // Always show navbar at the top
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        // Scrolling down
+        setIsVisible(false);
+        setNavIsOpened(false); // Close mobile menu when scrolling down
+      } else {
+        // Scrolling up
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
   // Handle link click with smooth animation
   const handleLinkClick = (e, href) => {
@@ -30,12 +59,12 @@ const Navbar = () => {
       // Navigate to another page after a short delay
       setTimeout(() => {
         window.location.href = href;
-      }, 300); // matches the duration of your nav animation
+      }, 300);
     }
   };
 
   const navLinks = [
-    { href: "/", label: "Home" },
+    { href: "#home", label: "Home" },
     { href: "#services", label: "Services" },
     { href: "#Revenue", label: "Revenue" },
     { href: "#case-study", label: "Case Study" },
@@ -47,24 +76,30 @@ const Navbar = () => {
       <div
         aria-hidden={true}
         onClick={closeNavbar}
-        className={`fixed inset-0 z-30 ${
-          navIsOpened ? "lg:hidden" : "hidden lg:hidden"
+        className={`fixed inset-0 z-30 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ${
+          navIsOpened
+            ? "opacity-100 lg:hidden"
+            : "opacity-0 pointer-events-none lg:hidden"
         }`}
       />
 
-      <header className="sticky left-0 top-0 w-full flex items-center h-20 border-b border-b-gray-100 dark:border-b-gray-900 z-40 bg-opacity-80 backdrop-filter backdrop-blur-xl">
+      <header
+        className={`fixed left-0 top-0 w-full flex items-center h-20 border-b border-b-gray-100 dark:border-b-gray-900 z-40 bg-white/80 dark:bg-gray-950/80 backdrop-filter backdrop-blur-xl transition-transform duration-300 ease-in-out ${
+          isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
         <nav className="relative mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5 flex gap-x-5 justify-between items-center">
           <div className="flex items-center min-w-max">
             <Link
               href="#"
               className="text-xl font-semibold flex items-center gap-x-2"
             >
-              <img src="/logo.png" />
+              <img src="/logo.png" alt="Logo" />
             </Link>
           </div>
 
           <div
-            className={`absolute top-full left-0 lg:bg-transparent border-b border-gray-200 dark:border-gray-800 py-8 lg:py-0 px-5 sm:px-10 md:px-12 lg:px-0 lg:border-none w-full lg:top-0 lg:relative lg:flex lg:justify-between duration-300 ease-linear ${
+            className={`absolute top-full left-0 bg-white dark:bg-gray-950 lg:bg-transparent border-b border-gray-200 dark:border-gray-800 py-8 lg:py-0 px-5 sm:px-10 md:px-12 lg:px-0 lg:border-none w-full lg:top-0 lg:relative lg:flex lg:justify-between transition-all duration-300 ease-in-out shadow-lg lg:shadow-none ${
               navIsOpened
                 ? "translate-y-0 opacity-100 visible"
                 : "translate-y-10 opacity-0 invisible lg:visible lg:translate-y-0 lg:opacity-100"
@@ -88,7 +123,7 @@ const Navbar = () => {
               <Link
                 href="#contact"
                 onClick={(e) => handleLinkClick(e, "#contact")}
-                className="px-6 items-center h-12 rounded-3xl text-pink-700 border border-gray-100 dark:border-gray-800 dark:text-white bg-gray-100 dark:bg-gray-900 duration-300 ease-linear flex justify-center w-full sm:w-auto"
+                className="px-6 items-center h-12 rounded-3xl text-pink-700 border border-gray-100 dark:border-gray-800 dark:text-white bg-gray-100 dark:bg-gray-900 duration-300 ease-linear flex justify-center w-full sm:w-auto hover:bg-gray-200 dark:hover:bg-gray-800"
               >
                 Book a call
               </Link>

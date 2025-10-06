@@ -15,7 +15,10 @@ export default function HeroSection() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="bg-gradient-to-b from-[#000514] to-[#001028] overflow-hidden">
+    <div
+      id="home"
+      className="bg-gradient-to-b from-[#000514] to-[#001028] overflow-hidden"
+    >
       <div className="relative isolate px-6 lg:px-8">
         {/* Top gradient blob */}
         <div
