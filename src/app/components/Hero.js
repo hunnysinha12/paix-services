@@ -86,7 +86,7 @@ export default function HeroSection() {
             <div className="mt-12 flex items-center justify-center gap-x-6 animate-in fade-in slide-in-from-bottom duration-700 delay-500">
               <a
                 href="#"
-                className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 transition-all duration-300 hover:scale-105"
+                className="flex items-center h-fit px-8 bg-blue-600 hover:bg-blue-700 rounded-lg gap-3 duration-300 hover:scale-105 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-4 hover:from-blue-700 hover:to-purple-700 transform hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-blue-500/50 hover:shadow-xl hover:shadow-blue-500/60"
               >
                 Schedule a Discovery Session
               </a>

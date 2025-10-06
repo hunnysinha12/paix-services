@@ -276,7 +276,7 @@ export default function RevenueCycleSection() {
                 will identify quick wins in eligibility, coding, denials, and
                 A/R follow-up—accelerating cash within weeks.
               </p>
-              <button className="group inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <button className="flex items-center h-fit px-8 bg-blue-600 hover:bg-blue-700 rounded-lg gap-3 duration-300 hover:scale-105 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-4 hover:from-blue-700 hover:to-purple-700 transform hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-blue-500/50 hover:shadow-xl hover:shadow-blue-500/60 mx-auto">
                 Start Your Discovery Session
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </button>

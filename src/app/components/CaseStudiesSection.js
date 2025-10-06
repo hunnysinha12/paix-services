@@ -363,7 +363,7 @@ export default function CaseStudiesSection() {
           <p className="text-gray-400 mb-6">
             Ready to transform your revenue cycle?
           </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/50 hover:scale-105 transform">
+          <button className="flex items-center h-fit px-8 bg-blue-600 hover:bg-blue-700 rounded-lg gap-3 duration-300 hover:scale-105 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-4 hover:from-blue-700 hover:to-purple-700 transform hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-blue-500/50 hover:shadow-xl hover:shadow-blue-500/60 mx-auto">
             Schedule a Consultation
           </button>
         </div>
