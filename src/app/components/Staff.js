@@ -151,7 +151,7 @@ export default function DoctorCards() {
   return (
     <div
       id="team"
-      className="bg-gradient-to-b from-[#001028] to-[#000514]  p-8"
+      className="bg-gradient-to-b from-[#001028] to-[#000514] flex flex-col justify-center items-center gap-8 p-8"
     >
       {/* Header */}
 
@@ -166,7 +166,7 @@ export default function DoctorCards() {
         to ensure the best outcomes for every patient.
       </p>
 
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex flex-wrap gap-8 items-center justify-center">
         {/* Main Large Card */}
         <DoctorCard
           name={mainDoctor.name}
@@ -177,7 +177,7 @@ export default function DoctorCards() {
         />
 
         {/* Smaller Cards Grid */}
-        <div className="ml-8 grid lg:grid-cols-2 md:grid-cols-1 gap-6">
+        <div className="ml-8 grid lg:grid-cols-2 md:grid-cols-1 gap-6 mx-auto">
           {otherDoctors.map((doctor) => (
             <DoctorCard
               key={doctor.id}
